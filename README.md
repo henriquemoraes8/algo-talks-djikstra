@@ -160,3 +160,27 @@ Para executar o programa, basta entrar no diretório pela linha de comando e exe
 O primeiro argumento é o nome do arquivo com as rotas, o segundo seria o ponto de partida e o terceiro
 é o destino
 
+### Ressalvas
+
+Algumas discrepâncias foram observadas no documento de explicação do desafio. Não sei se isso é oversight ou
+intecional, de qualquer forma vale mencioná-las
+
+Na seção *Execução do Programa* temos o seguinte exemplo
+
+```angular2html
+$ mysolution input-routes.csv GRU-CGD
+  best route: CDG - SCL - ORL - CDG
+```
+
+Note-se que:
+* O arquivo providenciado é `.txt` ao invés de `.csv` mas isso não deveria afetar a capacidade de executar
+o programa
+* A linha de *best route* possui CDG repetido duas vezes. Imagino que a intenção seria GRU no primeiro item
+* O exemplo dado acima **não representa a melhor rota possível**. No caso acima, GRU - SCL - ORL - CDG representa uma
+rota com custo total de $48. Porém ao rodar o programa com esses parâmetros, descobrimos que existe uma rota com custo menor
+
+```angular2html
+node bexs-route-finder input-file.txt GRU CDG
+Best route: GRU - BRC - SCL - ORL - CDG at cost of: 43
+```
+
