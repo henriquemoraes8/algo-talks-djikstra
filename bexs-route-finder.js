@@ -6,7 +6,7 @@ const Node = require('./node');
 function main() {
     if (!process.argv[2]) return;
     let result = parseRoutes(process.argv[2], process.argv[3], process.argv[4]);
-    console.log('Best route: ' + result.path + ' at cost of: ' + result.cost);
+    console.log('Best route: ' + result.path + ' at cost of: $' + result.cost);
 }
 
 function parseRoutes(fileName, start, end) {
